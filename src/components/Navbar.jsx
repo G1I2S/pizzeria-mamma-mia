@@ -1,19 +1,19 @@
-const Navbar = ({ currentPage, onNavigate, total }) => {
-  const token = false
-
+const Navbar = ({ currentPage, onNavigate, total, isLoggedIn }) => {
   const formatPrice = (price) => price.toLocaleString('es-CL')
 
   return (
     <nav className="navbar-custom">
       <span className="navbar-brand-custom">🍕 Mamma Mía</span>
       <div className="navbar-buttons">
-        <button
-          className={`btn-nav ${currentPage === 'home' ? 'btn-nav-active' : ''}`}
-          onClick={() => onNavigate('home')}
-        >
-          🍕 Home
-        </button>
-        {token ? (
+        {isLoggedIn && (
+          <button
+            className={`btn-nav ${currentPage === 'home' ? 'btn-nav-active' : ''}`}
+            onClick={() => onNavigate('home')}
+          >
+            🍕 Home
+          </button>
+        )}
+        {isLoggedIn ? (
           <>
             <button className="btn-nav">🔓 Profile</button>
             <button className="btn-nav">🔒 Logout</button>
