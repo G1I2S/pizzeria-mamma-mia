@@ -16,13 +16,14 @@ body {
 .navbar-custom {
   background-color: #1a1a1a;
   border-bottom: 2px solid #e63946;
-  padding: 12px 24px;
+  padding: 12px 16px;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   position: sticky;
   top: 0;
   z-index: 100;
+  flex-wrap: wrap;
 }
 
 .navbar-brand-custom {
