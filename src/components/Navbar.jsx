@@ -35,7 +35,9 @@ const Navbar = ({ currentPage, onNavigate, total, isLoggedIn }) => {
           </>
         )}
       </div>
-      <button className="btn-total">🛒 Total: ${formatPrice(total)}</button>
+      {currentPage === 'home' && (
+        <button className="btn-total">🛒 Total: ${formatPrice(total)}</button>
+      )}
     </nav>
   )
 }
