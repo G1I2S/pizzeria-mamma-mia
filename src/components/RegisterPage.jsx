@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const RegisterPage = () => {
+const RegisterPage = ({ onNavigate }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
@@ -24,6 +24,7 @@ const RegisterPage = () => {
     }
 
     alert('Registration successful!')
+    onNavigate('home')
   }
 
   return (

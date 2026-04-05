@@ -14,8 +14,8 @@ const App = () => {
   }
 
   const renderPage = () => {
-    if (currentPage === 'register') return <RegisterPage />
-    if (currentPage === 'login') return <LoginPage />
+    if (currentPage === 'register') return <RegisterPage onNavigate={setCurrentPage} />
+    if (currentPage === 'login') return <LoginPage onNavigate={setCurrentPage} />
     return <Home onAdd={handleAddToCart} />
   }
 

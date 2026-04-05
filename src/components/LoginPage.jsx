@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const LoginPage = () => {
+const LoginPage = ({ onNavigate }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
@@ -18,6 +18,7 @@ const LoginPage = () => {
     }
 
     alert('Authentication successful!')
+    onNavigate('home')
   }
 
   return (
