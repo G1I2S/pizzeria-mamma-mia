@@ -1,5 +1,4 @@
-const Navbar = () => {
-  const total = 25000
+const Navbar = ({ currentPage, onNavigate, total }) => {
   const token = false
 
   const formatPrice = (price) => price.toLocaleString('es-CL')
@@ -8,7 +7,12 @@ const Navbar = () => {
     <nav className="navbar-custom">
       <span className="navbar-brand-custom">🍕 Mamma Mía</span>
       <div className="navbar-buttons">
-        <button className="btn-nav">🍕 Home</button>
+        <button
+          className={`btn-nav ${currentPage === 'home' ? 'btn-nav-active' : ''}`}
+          onClick={() => onNavigate('home')}
+        >
+          🍕 Home
+        </button>
         {token ? (
           <>
             <button className="btn-nav">🔓 Profile</button>
@@ -16,8 +20,18 @@ const Navbar = () => {
           </>
         ) : (
           <>
-            <button className="btn-nav">🔐 Login</button>
-            <button className="btn-nav">🔐 Register</button>
+            <button
+              className={`btn-nav ${currentPage === 'login' ? 'btn-nav-active' : ''}`}
+              onClick={() => onNavigate('login')}
+            >
+              🔐 Login
+            </button>
+            <button
+              className={`btn-nav ${currentPage === 'register' ? 'btn-nav-active' : ''}`}
+              onClick={() => onNavigate('register')}
+            >
+              🔐 Register
+            </button>
           </>
         )}
       </div>
