@@ -8,7 +8,7 @@ const Navbar = ({ currentPage, onNavigate, total, isLoggedIn }) => {
         {isLoggedIn && (
           <button
             className={`btn-nav ${currentPage === 'home' ? 'btn-nav-active' : ''}`}
-            onClick={() => onNavigate('home')}
+            onClick={() => onNavigate?.('home')}
           >
             🍕 Home
           </button>
@@ -22,13 +22,13 @@ const Navbar = ({ currentPage, onNavigate, total, isLoggedIn }) => {
           <>
             <button
               className={`btn-nav ${currentPage === 'login' ? 'btn-nav-active' : ''}`}
-              onClick={() => onNavigate('login')}
+              onClick={() => onNavigate?.('login')}
             >
               🔐 Login
             </button>
             <button
               className={`btn-nav ${currentPage === 'register' ? 'btn-nav-active' : ''}`}
-              onClick={() => onNavigate('register')}
+              onClick={() => onNavigate?.('register')}
             >
               🔐 Register
             </button>
