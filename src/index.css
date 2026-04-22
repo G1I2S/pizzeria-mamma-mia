@@ -431,6 +431,56 @@ body {
   background-color: #c1121f;
 }
 
+/* ───── PIZZA DETAIL ───── */
+.pizza-loading {
+  text-align: center;
+  color: #888;
+  padding: 60px 20px;
+  font-size: 1.1rem;
+}
+
+.pizza-detail-container {
+  max-width: 800px;
+  margin: 60px auto;
+  background-color: #1a1a1a;
+  border: 1px solid #2d2d2d;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.pizza-detail-img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.pizza-detail-body {
+  padding: 32px 36px;
+}
+
+.pizza-detail-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.pizza-detail-desc {
+  color: #aaa;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.pizza-detail-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #e63946;
+  margin-bottom: 24px;
+}
+
 /* ───── FOOTER ───── */
 .footer-custom {
   background-color: #0d0d0d;
