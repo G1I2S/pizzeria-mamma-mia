@@ -1,43 +1,47 @@
-const Navbar = ({ currentPage, onNavigate, total, isLoggedIn }) => {
-  const formatPrice = (price) => price.toLocaleString('es-CL')
+import { Link, useLocation } from 'react-router-dom'
+
+const Navbar = ({ total }) => {
+  const location = useLocation()
+  const formatPrice = (price) => (price || 0).toLocaleString('es-CL')
 
   return (
     <nav className="navbar-custom">
-      <span className="navbar-brand-custom">🍕 Mamma Mía</span>
+      <Link to="/" className="navbar-brand-custom" style={{ textDecoration: 'none' }}>
+        🍕 Mamma Mía
+      </Link>
       <div className="navbar-buttons">
-        {isLoggedIn && (
-          <button
-            className={`btn-nav ${currentPage === 'home' ? 'btn-nav-active' : ''}`}
-            onClick={() => onNavigate?.('home')}
-          >
-            🍕 Home
-          </button>
-        )}
-        {isLoggedIn ? (
-          <>
-            <button className="btn-nav">🔓 Profile</button>
-            <button className="btn-nav">🔒 Logout</button>
-          </>
-        ) : (
-          <>
-            <button
-              className={`btn-nav ${currentPage === 'login' ? 'btn-nav-active' : ''}`}
-              onClick={() => onNavigate?.('login')}
-            >
-              🔐 Login
-            </button>
-            <button
-              className={`btn-nav ${currentPage === 'register' ? 'btn-nav-active' : ''}`}
-              onClick={() => onNavigate?.('register')}
-            >
-              🔐 Register
-            </button>
-          </>
-        )}
+        <Link
+          to="/"
+          className={`btn-nav ${location.pathname === '/' ? 'btn-nav-active' : ''}`}
+          style={{ textDecoration: 'none' }}
+        >
+          🍕 Home
+        </Link>
+        <Link
+          to="/login"
+          className={`btn-nav ${location.pathname === '/login' ? 'btn-nav-active' : ''}`}
+          style={{ textDecoration: 'none' }}
+        >
+          🔐 Login
+        </Link>
+        <Link
+          to="/register"
+          className={`btn-nav ${location.pathname === '/register' ? 'btn-nav-active' : ''}`}
+          style={{ textDecoration: 'none' }}
+        >
+          🔐 Register
+        </Link>
+        <Link
+          to="/profile"
+          className={`btn-nav ${location.pathname === '/profile' ? 'btn-nav-active' : ''}`}
+          style={{ textDecoration: 'none' }}
+        >
+          🔓 Profile
+        </Link>
       </div>
-      {currentPage === 'home' && (
-        <button className="btn-total">🛒 Total: ${formatPrice(total)}</button>
-      )}
+      <Link to="/cart" className="btn-total" style={{ textDecoration: 'none' }}>
+        🛒 Total: ${formatPrice(total)}
+      </Link>
     </nav>
   )
 }

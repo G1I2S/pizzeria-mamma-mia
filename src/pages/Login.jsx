@@ -1,14 +1,15 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const RegisterPage = ({ onNavigate }) => {
+const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [confirmPassword, setConfirmPassword] = useState('')
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    if (!email || !password || !confirmPassword) {
+    if (!email || !password) {
       alert('All fields are required!')
       return
     }
@@ -18,18 +19,13 @@ const RegisterPage = ({ onNavigate }) => {
       return
     }
 
-    if (password !== confirmPassword) {
-      alert('Passwords do not match!')
-      return
-    }
-
-    alert('Registration successful!')
-    onNavigate('home')
+    alert('Authentication successful!')
+    navigate('/')
   }
 
   return (
     <div className="form-container">
-      <h2>Register</h2>
+      <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Email</label>
@@ -49,19 +45,10 @@ const RegisterPage = ({ onNavigate }) => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <div className="form-group">
-          <label>Confirm Password</label>
-          <input
-            type="password"
-            placeholder="Confirm your password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          />
-        </div>
-        <button type="submit" className="btn-submit">Register</button>
+        <button type="submit" className="btn-submit">Login</button>
       </form>
     </div>
   )
 }
 
-export default RegisterPage
+export default Login

@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
-import Header from './Header'
-import CardPizza from './CardPizza'
+import Header from '../components/Header'
+import CardPizza from '../components/CardPizza'
 
-const Home = ({ onAdd }) => {
+const Home = () => {
   const [pizzas, setPizzas] = useState([])
 
   useEffect(() => {
@@ -25,7 +25,6 @@ const Home = ({ onAdd }) => {
               price={pizza.price}
               ingredients={pizza.ingredients}
               img={pizza.img}
-              onAdd={onAdd}
             />
           ))}
         </div>
