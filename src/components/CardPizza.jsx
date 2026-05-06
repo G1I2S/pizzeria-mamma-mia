@@ -1,4 +1,4 @@
-const CardPizza = ({ name, price, ingredients, img, onAdd }) => {
+const CardPizza = ({ id, name, price, ingredients, img, onAdd }) => {
   const formatPrice = (price) => price.toLocaleString('es-CL')
 
   return (
@@ -15,7 +15,7 @@ const CardPizza = ({ name, price, ingredients, img, onAdd }) => {
         <p className="pizza-price">Precio: ${formatPrice(price)}</p>
         <div className="card-actions">
           <button className="btn-ver-mas">Ver Más »</button>
-          <button className="btn-add" onClick={() => onAdd(price)}>Añadir 🛒</button>
+          <button className="btn-add" onClick={() => onAdd({ id, name, price, img })}>Añadir 🛒</button>
         </div>
       </div>
     </div>

@@ -1,29 +1,8 @@
-import { useState } from 'react'
-import { pizzaCart } from '../pizzas'
+import { useCart } from '../context/CartContext'
 
 const Cart = () => {
-  const [cart, setCart] = useState(pizzaCart)
-
+  const { cart, increase, decrease, total } = useCart()
   const formatPrice = (price) => price.toLocaleString('es-CL')
-
-  const increase = (id) => {
-    setCart(cart.map((item) =>
-      item.id === id ? { ...item, count: item.count + 1 } : item
-    ))
-  }
-
-  const decrease = (id) => {
-    const item = cart.find((item) => item.id === id)
-    if (item.count === 1) {
-      setCart(cart.filter((item) => item.id !== id))
-    } else {
-      setCart(cart.map((item) =>
-        item.id === id ? { ...item, count: item.count - 1 } : item
-      ))
-    }
-  }
-
-  const total = cart.reduce((sum, item) => sum + item.price * item.count, 0)
 
   return (
     <div className="cart-container">

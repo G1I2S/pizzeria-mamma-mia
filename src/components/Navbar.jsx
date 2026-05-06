@@ -1,7 +1,9 @@
 import { Link, useLocation } from 'react-router-dom'
+import { useCart } from '../context/CartContext'
 
-const Navbar = ({ total }) => {
+const Navbar = () => {
   const location = useLocation()
+  const { total } = useCart()
   const formatPrice = (price) => (price || 0).toLocaleString('es-CL')
 
   return (
