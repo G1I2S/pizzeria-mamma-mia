@@ -1,13 +1,17 @@
 import { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import { useCart } from '../context/CartContext'
 
 const Pizza = () => {
+  const { id } = useParams()
   const [pizza, setPizza] = useState(null)
+  const { addToCart } = useCart()
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/pizzas/p001')
+    fetch(`http://localhost:5000/api/pizzas/${id}`)
       .then((res) => res.json())
       .then((data) => setPizza(data))
-  }, [])
+  }, [id])
 
   if (!pizza) return <p className="pizza-loading">Cargando...</p>
 
@@ -26,7 +30,12 @@ const Pizza = () => {
           ))}
         </ul>
         <p className="pizza-detail-price">Precio: ${formatPrice(pizza.price)}</p>
-        <button className="btn-add">Añadir al carrito 🛒</button>
+        <button
+          className="btn-add"
+          onClick={() => addToCart({ id: pizza.id, name: pizza.name, price: pizza.price, img: pizza.img })}
+        >
+          Añadir al carrito 🛒
+        </button>
       </div>
     </div>
   )

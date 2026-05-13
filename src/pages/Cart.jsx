@@ -1,7 +1,9 @@
 import { useCart } from '../context/CartContext'
+import { useUser } from '../context/UserContext'
 
 const Cart = () => {
   const { cart, increase, decrease, total } = useCart()
+  const { token } = useUser()
   const formatPrice = (price) => price.toLocaleString('es-CL')
 
   return (
@@ -24,7 +26,7 @@ const Cart = () => {
         ))
       )}
       <h3 className="cart-total">Total: ${formatPrice(total)}</h3>
-      <button className="btn-pay">Pagar</button>
+      <button className="btn-pay" disabled={!token}>Pagar</button>
     </div>
   )
 }

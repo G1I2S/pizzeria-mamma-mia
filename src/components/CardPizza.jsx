@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const CardPizza = ({ id, name, price, ingredients, img, onAdd }) => {
   const formatPrice = (price) => price.toLocaleString('es-CL')
 
@@ -14,7 +16,9 @@ const CardPizza = ({ id, name, price, ingredients, img, onAdd }) => {
         </ul>
         <p className="pizza-price">Precio: ${formatPrice(price)}</p>
         <div className="card-actions">
-          <button className="btn-ver-mas">Ver Más »</button>
+          <Link to={`/pizza/${id}`} className="btn-ver-mas" style={{ textDecoration: 'none' }}>
+            Ver Más »
+          </Link>
           <button className="btn-add" onClick={() => onAdd({ id, name, price, img })}>Añadir 🛒</button>
         </div>
       </div>
