@@ -1,19 +1,14 @@
-import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
+import { pizzas } from '../pizzas'
 
 const Pizza = () => {
   const { id } = useParams()
-  const [pizza, setPizza] = useState(null)
   const { addToCart } = useCart()
 
-  useEffect(() => {
-    fetch(`http://localhost:5000/api/pizzas/${id}`)
-      .then((res) => res.json())
-      .then((data) => setPizza(data))
-  }, [id])
+  const pizza = pizzas.find((p) => p.id === Number(id))
 
-  if (!pizza) return <p className="pizza-loading">Cargando...</p>
+  if (!pizza) return <p className="pizza-loading">Pizza no encontrada.</p>
 
   const formatPrice = (price) => price.toLocaleString('es-CL')
 

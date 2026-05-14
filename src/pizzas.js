@@ -2,6 +2,7 @@ export const pizzas = [
   {
     id: 1,
     name: "Napolitana",
+    desc: "La clásica pizza italiana con tomates frescos, mozzarella y jamón, perfumada con orégano.",
     price: 5950,
     ingredients: ["mozzarella", "tomates", "jamón", "orégano"],
     img: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=640&q=80",
@@ -9,6 +10,7 @@ export const pizzas = [
   {
     id: 2,
     name: "Española",
+    desc: "Una combinación irresistible de cuatro quesos: mozzarella, gorgonzola, parmesano y provolone.",
     price: 6950,
     ingredients: ["mozzarella", "gorgonzola", "parmesano", "provolone"],
     img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=640&q=80",
@@ -16,6 +18,7 @@ export const pizzas = [
   {
     id: 3,
     name: "Pepperoni",
+    desc: "La favorita de siempre, cargada de pepperoni y mozzarella sobre una base de tomate.",
     price: 6950,
     ingredients: ["mozzarella", "pepperoni", "orégano"],
     img: "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=640&q=80",
@@ -23,6 +26,7 @@ export const pizzas = [
   {
     id: 4,
     name: "Hawaiana",
+    desc: "El clásico contraste entre lo dulce y lo salado con jamón y piña sobre mozzarella.",
     price: 7250,
     ingredients: ["mozzarella", "jamón", "piña", "orégano"],
     img: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=640&q=80",
@@ -30,6 +34,7 @@ export const pizzas = [
   {
     id: 5,
     name: "Vegetariana",
+    desc: "Llena de color y sabor con pimentón, champiñones, cebolla y aceitunas sobre mozzarella.",
     price: 6750,
     ingredients: ["mozzarella", "pimentón", "champiñones", "cebolla", "aceitunas"],
     img: "https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=640&q=80",
@@ -37,6 +42,7 @@ export const pizzas = [
   {
     id: 6,
     name: "Margarita",
+    desc: "La pizza más sencilla y elegante: mozzarella fresca, tomate y albahaca con aceite de oliva.",
     price: 5500,
     ingredients: ["mozzarella fresca", "tomate", "albahaca", "aceite de oliva"],
     img: "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?w=640&q=80",
