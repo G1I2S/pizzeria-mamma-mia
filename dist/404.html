@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      var l = window.location;
+      var segmentCount = 1;
+      var p = l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?p=' +
+        l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash;
+      l.replace(p);
+    </script>
+  </head>
+  <body></body>
+</html>
