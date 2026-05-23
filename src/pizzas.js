@@ -61,7 +61,7 @@ export const pizzas = [
     desc: "Jugosos trozos de pollo a la BBQ sobre mozzarella, cebolla morada caramelizada y pimentón rojo.",
     price: 7950,
     ingredients: ["mozzarella", "pollo BBQ", "cebolla morada", "pimentón rojo", "salsa BBQ"],
-    img: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=640&q=80",
+    img: "https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=640&q=80",
   },
 ];
 
