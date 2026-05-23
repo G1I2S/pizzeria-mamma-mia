@@ -47,6 +47,22 @@ export const pizzas = [
     ingredients: ["mozzarella fresca", "tomate", "albahaca", "aceite de oliva"],
     img: "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?w=640&q=80",
   },
+  {
+    id: 7,
+    name: "Trufa Negra",
+    desc: "Una pizza gourmet con crema de trufa negra, mozzarella, champiñones portobello y rúcula fresca.",
+    price: 9950,
+    ingredients: ["crema de trufa negra", "mozzarella", "champiñones portobello", "rúcula"],
+    img: "https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=640&q=80",
+  },
+  {
+    id: 8,
+    name: "Pollo BBQ",
+    desc: "Jugosos trozos de pollo a la BBQ sobre mozzarella, cebolla morada caramelizada y pimentón rojo.",
+    price: 7950,
+    ingredients: ["mozzarella", "pollo BBQ", "cebolla morada", "pimentón rojo", "salsa BBQ"],
+    img: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=640&q=80",
+  },
 ];
 
 export const pizzaCart = [
