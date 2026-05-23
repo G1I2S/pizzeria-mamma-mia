@@ -1,37 +1,46 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useUser } from '../context/UserContext'
 
 const Register = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
+  const [error, setError] = useState('')
+  const { register } = useUser()
   const navigate = useNavigate()
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
+    setError('')
 
     if (!email || !password || !confirmPassword) {
-      alert('All fields are required!')
+      setError('All fields are required!')
       return
     }
 
     if (password.length < 6) {
-      alert('Password must be at least 6 characters!')
+      setError('Password must be at least 6 characters!')
       return
     }
 
     if (password !== confirmPassword) {
-      alert('Passwords do not match!')
+      setError('Passwords do not match!')
       return
     }
 
-    alert('Registration successful!')
-    navigate('/')
+    try {
+      await register(email, password)
+      navigate('/')
+    } catch {
+      setError('Registration failed. Email may already be in use.')
+    }
   }
 
   return (
     <div className="form-container">
       <h2>Register</h2>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
       <form onSubmit={handleSubmit}>
         <div className="form-group">
           <label>Email</label>
